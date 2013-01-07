@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+import subprocess
+import sys
+
+def main(args):
+    for arg in args:
+        command_args = [arg, "|", " curl -s -F 'sprunge=<-' sprunge.us"]
+        command = ' '.join(command_args)
+        p = subprocess.Popen(command, stdout = subprocess.PIPE, shell=True)
+        output, error = p.communicate()
+        output = output.replace("\n", "")
+        output = output.replace(" ", "")
+    
+        print arg + "  -->  " + output
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
