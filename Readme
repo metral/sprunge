@@ -1,0 +1,12 @@
+Install
+=======
+1. git clone git://github.com/metral/sprunge.git
+2. cd sprunge
+3. chmod 755 sprunge
+4. sudo cp sprunge /usr/local/bin/
+
+Usage
+====
+
+i.e.
+$ sprunge "echo foobar" "lsof"
